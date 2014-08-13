@@ -42,7 +42,6 @@ http {
 			proxy_set_header Host $http_host;
 			proxy_redirect off;
 			proxy_pass http://app_server;
-			return 200;
 		}
 	}
 }
