@@ -23,8 +23,8 @@ http {
 	default_type application/octet-stream;
 	sendfile on;
 
-	#Must read the body in 5 seconds.
-	client_body_timeout 5;
+	#Must read the body in 7 seconds.
+	client_body_timeout 7;
 
 	upstream app_server {
 		server 127.0.0.1:5000;
@@ -33,7 +33,7 @@ http {
 	server {
 		listen <%= ENV["PORT"] %>;
 		server_name _;
-		keepalive_timeout 5;
+		keepalive_timeout 7;
 
 		location / {
 			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
