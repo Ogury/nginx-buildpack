@@ -36,7 +36,7 @@ http {
 		server_name _;
 		keepalive_timeout 4;
 		
-		more_set_headers -s 200;
+		error_page 503 =200 /ping;
 		
 
 		location / {
