@@ -43,5 +43,11 @@ http {
 			proxy_redirect off;
 			proxy_pass http://app_server;
 		}
+		
+		location /nginx_status {
+			# Turn on stats
+			stub_status on;
+			access_log   off;
+		}
 	}
 }
