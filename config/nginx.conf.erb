@@ -24,8 +24,8 @@ http {
 	sendfile on;
 
 
-	#Must read the body in 4 seconds.
-	client_body_timeout 4;
+	#Must read the body in 25 seconds.
+	client_body_timeout 25;
 
 	upstream app_server {
 		server 127.0.0.1:5000;
@@ -34,7 +34,7 @@ http {
 	server {
 		listen <%= ENV["PORT"] %>;
 		server_name _;
-		keepalive_timeout 4;
+		keepalive_timeout 5;
 		
 		#location /nginx_status {
 		#	# Turn on stats
